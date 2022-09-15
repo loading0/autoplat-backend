@@ -11,7 +11,7 @@ COPY . .
 # 安装必要的库
 RUN pip install --no-cache-dir -i https://pypi.douban.com/simple -r requirements.txt
 ENV LANG C.UTF-8
-CMD ["gunicorn", "mydjango.wsgi:application","-c","./gunicorn.conf.py"]
+CMD ["gunicorn", "api_automation_test.wsgi:application","-c","./gunicorn.conf.py"]
 #RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' etc/apk/repositories && \
 #    apk update && \
 #    apk upgrade && \
