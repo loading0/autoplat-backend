@@ -4,14 +4,14 @@ LABEL description='Django project'
 
 # 创建/project目录并切换进目录下
 # 第一个WORKDIR要用绝对路径
-WORKDIR project
+WORKDIR /Project/mydjango
 # 把dockerfile当前目录下的所有文件拷贝进镜像的/project目录下
 COPY . .
 
 # 安装必要的库
 RUN pip install --no-cache-dir -i https://pypi.douban.com/simple -r requirements.txt
 ENV LANG C.UTF-8
-CMD ["gunicorn", "Interface_autoplatform.wsgi:application","-c","./gunicorn.conf.py"]
+CMD ["gunicorn", "mydjango.wsgi:application","-c","./gunicorn.conf.py"]
 #RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' etc/apk/repositories && \
 #    apk update && \
 #    apk upgrade && \
