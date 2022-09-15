@@ -88,6 +88,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_swagger',
+    'gunicorn'
 ]
 
 SWAGGER_SETTINGS = {
@@ -164,8 +165,8 @@ DATABASES = {
         'NAME': 'api_test',
         'USER': 'root',
         'PASSWORD': 'Fuckingsql_',
-        'HOST': '47.94.233.53',
-        # 'HOST': '120.79.232.23',
+        # 'HOST': '47.94.233.53',
+        'HOST': 'mysql', # mysql容器名称
         # 'HOST': '127.0.0.1',
         'PORT': '3306',
     }
